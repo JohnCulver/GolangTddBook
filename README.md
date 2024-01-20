@@ -16,6 +16,7 @@ go test -v ./... -bench=. -run=xxx -benchmem
 # Completed
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/integers
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/iteration
 
 # Next Step
-https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/iteration
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices
