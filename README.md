@@ -19,6 +19,7 @@ brew install gopls
 ```json
 {
     "go.formatTool": "gofmt",
+    "go.useLanguageServer": true,
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
         "--fast"
@@ -26,7 +27,7 @@ brew install gopls
     "[go]": {
         "editor.insertSpaces": true,
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "golang.go"
+        "editor.defaultFormatter": "golang.go",
     }
 }
 ```
