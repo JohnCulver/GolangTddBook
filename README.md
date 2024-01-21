@@ -15,6 +15,21 @@ go install golang.org/x/tools/cmd/godoc
 brew install gopls
 ```
 
+## VScode settings
+```json
+{
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+    "--fast"
+    ],
+    "[go]": {
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "golang.go"
+    }
+}
+```
+
 # Additonal Commands
 
 ## Test Benchmarks
