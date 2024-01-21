@@ -10,6 +10,11 @@ go install golang.org/x/tools/cmd/godoc
 ~/go/bin/godoc -http=:6060
 ```
 
+## GoPls
+```sh
+brew install gopls
+```
+
 # Additonal Commands
 
 ## Test Benchmarks
