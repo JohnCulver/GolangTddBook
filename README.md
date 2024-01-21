@@ -48,4 +48,4 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/integers
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/iteration
 
 # Next Step
-https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices#write-the-test-first-3
