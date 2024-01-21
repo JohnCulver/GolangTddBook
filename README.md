@@ -18,9 +18,10 @@ brew install gopls
 ## VScode settings
 ```json
 {
+    "go.formatTool": "gofmt",
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
-    "--fast"
+        "--fast"
     ],
     "[go]": {
         "editor.insertSpaces": true,
