@@ -9,14 +9,13 @@ func Sum(numbers []int) int {
 }
 
 func SumAll(arraysToSum ...[]int) []int {
+
 	sums := []int{}
-	for i := 0; i < len(arraysToSum); i++ {
-		arrayToSum := arraysToSum[i]
-		sums[i] = 0
-		for _, number := range arrayToSum {
-			sums[i] += number
-		}
+
+	for _, numberArray := range arraysToSum {
+		sums = append(sums, Sum(numberArray))
 	}
+
 	return sums
 
 }
