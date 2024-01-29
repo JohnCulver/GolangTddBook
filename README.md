@@ -47,5 +47,8 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/integers
 
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/iteration
 
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices
+
 # Next Step
-https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices#write-the-test-first-3
+
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/structs-methods-and-interfaces#further-refactoring
