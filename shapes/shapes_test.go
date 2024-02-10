@@ -8,27 +8,17 @@ func TestPerimeter(t *testing.T) {
 		shape Shape
 		want  float64
 	}{
-		{Rectangle{}, 0},
-		{Circle{}, 0},
-		{Triangle{}, 0},
+		{Rectangle{10, 10}, 40},
+		{Circle{10}, 62},
+		{Triangle{10, 10}, -1},
 	}
 
 	for _, pt := range perimeterTests {
 		got := pt.shape.Perimeter()
-
 		if got != pt.want {
-
+			t.Errorf("Perimter of %q got %.2f and want %.2f", pt.shape.Name(), got, pt.want)
 		}
 	}
-
-	rect := Rectangle{10.0, 10.0}
-	got := Perimeter(rect)
-	want := 40.0
-
-	if got != want {
-		t.Errorf("Perimter got %.2f and want %.2f", got, want)
-	}
-
 }
 
 func TestArea(t *testing.T) {
@@ -45,7 +35,7 @@ func TestArea(t *testing.T) {
 	for _, tt := range areaTests {
 		got := tt.shape.Area()
 		if got != tt.want {
-			t.Errorf("Area got %.2f and want %.2f", got, tt.want)
+			t.Errorf("Area of %q got %.2f and want %.2f", tt.shape.Name(), got, tt.want)
 		}
 	}
 
