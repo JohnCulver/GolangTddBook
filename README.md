@@ -15,6 +15,12 @@ go install golang.org/x/tools/cmd/godoc
 brew install gopls
 ```
 
+## errcheck
+```sh
+go install github.com/kisielk/errcheck@latest
+~/go/bin/errcheck .
+```
+
 ## VScode settings
 ```json
 {
@@ -51,5 +57,7 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices
 
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/structs-methods-and-interfaces
 
-# Next Step
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/pointers-and-errors
+
+# Next Step
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps
