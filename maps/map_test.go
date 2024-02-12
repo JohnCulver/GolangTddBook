@@ -9,28 +9,12 @@ func TestSearch(t *testing.T) {
 
 	dictionary := Dictionary{key: value}
 
-	assertStrings := func(t testing.TB, got, want string) {
-		t.Helper()
-
-		if got != want {
-			t.Errorf("Got %q, but wanted %q", got, want)
-		}
-	}
-
-	assertError := func(t testing.TB, got, want error) {
-		t.Helper()
-
-		if got != want {
-			t.Errorf("Got error %q, wanted %q", got, want)
-		}
-	}
-
 	t.Run("basic search", func(t *testing.T) {
 
-		got, _ := dictionary.Search(key)
+		got, err := dictionary.Search(key)
 
 		assertStrings(t, got, value)
-		assertNoError(_)
+		assertNoError(t, err)
 	})
 
 	t.Run("missing key", func(t *testing.T) {
@@ -39,4 +23,25 @@ func TestSearch(t *testing.T) {
 
 		assertError(t, err, want)
 	})
+}
+
+func assertNoError(t testing.TB, err error) {
+	if err != nil {
+		t.Fatal("Expected no error, but we got one.")
+	}
+}
+
+func assertError(t testing.TB, got, want error) {
+	t.Helper()
+
+	if got != want {
+		t.Errorf("Got error %q, wanted %q", got, want)
+	}
+}
+
+func assertStrings(t testing.TB, got string, want string) {
+	t.Helper()
+	if got != want {
+		t.Errorf("Got %q, but wanted %q", got, want)
+	}
 }
