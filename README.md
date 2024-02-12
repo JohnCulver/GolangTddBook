@@ -18,6 +18,7 @@ brew install gopls
 ## errcheck
 ```sh
 go install github.com/kisielk/errcheck@latest
+# cd into a package
 ~/go/bin/errcheck .
 ```
 
@@ -59,5 +60,7 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/structs-methods-and-
 
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/pointers-and-errors
 
-# Next Step
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps
+
+# Next Step
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/dependency-injection
