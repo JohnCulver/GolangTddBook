@@ -62,5 +62,9 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/pointers-and-errors
 
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps
 
-# Next Step
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/dependency-injection
+
+# Next Step
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking
+
+
