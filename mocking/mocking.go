@@ -8,19 +8,19 @@ import (
 )
 
 type Sleeper interface {
-	Sleep(secondsDuration int)
+	Sleep(secondsDuration time.Duration)
 }
 
 type DefaultSleeper struct{}
 
-func (ds *DefaultSleeper) Sleep(secondsDuration int) {
-	time.Sleep(1 * time.Second)
+func (ds *DefaultSleeper) Sleep(secondsDuration time.Duration) {
+	time.Sleep(secondsDuration)
 }
 
 func Countdown(out io.Writer, sleeper Sleeper, count int, finalWord string) {
 	for i := count; i > 0; i-- {
 		fmt.Fprintln(out, i)
-		sleeper.Sleep(1)
+		sleeper.Sleep(1 * time.Second)
 	}
 	fmt.Fprintln(out, finalWord)
 }

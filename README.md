@@ -64,7 +64,8 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps
 
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/dependency-injection
 
-# Next Step
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking
 
+# Next Step
 
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/concurrency
