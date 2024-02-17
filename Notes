@@ -1,0 +1,93 @@
+// TODO need to go through previous lessons and add interesting tidbits here
+Testing:
+    Using t.Run allows for adding a description to individual tests of the same group
+        func TestSum(t *testing.T) {
+            t.Run("Description", func(t *testing.T) {... })
+    Helper functions (used within a test file, or a group of tests) need to call t.Helper(), and receive t as testing.TB
+        func assertError(t testing.TB, got, want error) {
+            t.Helper() 
+            ... 
+        }
+
+    Table tests using anonymous structs can save a lot of boilerplate:
+        areaTests := []struct {
+            shape Shape
+            want  float64
+        }{
+            {Rectangle{12, 6}, 72},
+            {Circle{10}, 314.1592653589793},
+            {Triangle{12, 6}, 36},
+        }
+
+        for _, tt := range areaTests {
+            got := tt.shape.Area()
+            if got != tt.want {
+                t.Errorf("Area of %q got %.2f and want %.2f", tt.shape.Name(), got, tt.want)
+            }
+        }
+
+Receiver methods:
+    For struct/type methods in Go, consistency in receiver type is key: pointer receivers for modifications, value receivers for read-only operations.
+    E.g. use pointer receivers for all methods, or value recievers for all methods.
+    
+    e.g.
+    type Wallet struct {
+        balance Bitcoin
+    }
+    
+    func (w *Wallet) Deposit(amount Bitcoin) {
+        w.balance += amount
+    }
+    
+    func (w *Wallet) Balance() Bitcoin {
+        return w.balance
+    }
+
+    or
+    type Dictionary map[string]string
+
+    func (dictionary Dictionary) Search(key string) (string, error) {
+        ...
+    }
+
+    func (dictionary Dictionary) Add(key, value string) error {
+        ...
+    }
+
+The type keyword is incredibly powerful:
+    in concurrency:
+        type WebsiteChecker func(string) bool
+            this gives a name to functions of this type, which can then be passed to other methods/functions
+    in wallet:
+        type Bitcoin int
+            this allows you to do Bitcoin(10) and add receiver methods
+    in maps:
+        type Dictionary map[string]string
+            this allows you to add receiver methods to a map (that we are calling dictionary)
+
+
+Channels/concurrency/goroutines
+
+    // struct used
+    type result struct {
+        string
+        bool
+    }
+
+    go routines can be anonymous functions, and any function that starts with go will be async:
+        for _, url := range urls {
+            go func(u string) {
+                resultChan <- result{u, wc(u)}
+            }(url)
+        }
+    
+    The (url) at the end indicates we want to call the function immedietly
+
+    // Send statement
+    resultChannel <- result{u, wc(u)}
+
+    // Receive expression
+    r := <-resultChannel
+
+    The statement r := <-resultChannel will wait indefinitely until a value is available on the resultChannel to be received, 
+    unless the channel is closed or there's some form of timeout or cancellation mechanism in place.

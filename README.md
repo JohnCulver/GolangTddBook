@@ -39,6 +39,12 @@ go install github.com/kisielk/errcheck@latest
 }
 ```
 
+## VS Code Exstentions
+
+### Go test explorer
+    Great for visually running tests
+    Also allows for running individual benchmarks
+
 # Additonal Commands
 
 ## Test Benchmarks
