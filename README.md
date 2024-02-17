@@ -72,6 +72,8 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/dependency-injection
 
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking
 
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/concurrency
+
 # Next Step
 
-https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/concurrency
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/select
