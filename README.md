@@ -14,7 +14,7 @@ go install golang.org/x/tools/cmd/godoc
 ```sh
 brew install gopls
 ```
-provides IDE features
+Provides IDE features
 
 ## errcheck
 ```sh
@@ -85,8 +85,10 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/concurrency
 
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/select
 
-# Next Step
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/sync
+
+# Next Step
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/context
 
 # TODO later
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/reflection
