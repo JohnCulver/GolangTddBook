@@ -77,5 +77,7 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/concurrency
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/select
 
 # Next Step
-https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/reflection
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/sync
 
+# TODO later
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/reflection
