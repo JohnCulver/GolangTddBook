@@ -14,6 +14,7 @@ go install golang.org/x/tools/cmd/godoc
 ```sh
 brew install gopls
 ```
+provides IDE features
 
 ## errcheck
 ```sh
@@ -21,6 +22,14 @@ go install github.com/kisielk/errcheck@latest
 # cd into a package
 ~/go/bin/errcheck .
 ```
+Checks for unchecked errors.
+
+
+## go vet
+```sh
+go vet
+```
+Detects suspscious code and sublte errors
 
 ## VScode settings
 ```json
