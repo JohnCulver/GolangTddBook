@@ -2,26 +2,59 @@ package romannumerals
 
 import "testing"
 
-func TestConversion(t *testing.T) {
-	testSet := []struct {
-		num int
-		rn  string
-	}{
-		{1, "I"},
-		{2, "II"},
-		{4, "IV"},
-		{9, "IX"},
-		{10, "X"},
-		{11, "XI"},
-		{24, "XXIV"},
-	}
+var cases = []struct {
+	Num int
+	Rn  string
+}{
+	{Num: 1, Rn: "I"},
+	{Num: 2, Rn: "II"},
+	{Num: 3, Rn: "III"},
+	{Num: 4, Rn: "IV"},
+	{Num: 5, Rn: "V"},
+	{Num: 6, Rn: "VI"},
+	{Num: 7, Rn: "VII"},
+	{Num: 8, Rn: "VIII"},
+	{Num: 9, Rn: "IX"},
+	{Num: 10, Rn: "X"},
+	{Num: 14, Rn: "XIV"},
+	{Num: 18, Rn: "XVIII"},
+	{Num: 20, Rn: "XX"},
+	{Num: 39, Rn: "XXXIX"},
+	{Num: 40, Rn: "XL"},
+	{Num: 47, Rn: "XLVII"},
+	{Num: 49, Rn: "XLIX"},
+	{Num: 50, Rn: "L"},
+	{Num: 100, Rn: "C"},
+	{Num: 90, Rn: "XC"},
+	{Num: 400, Rn: "CD"},
+	{Num: 500, Rn: "D"},
+	{Num: 900, Rn: "CM"},
+	{Num: 1000, Rn: "M"},
+	{Num: 1984, Rn: "MCMLXXXIV"},
+	{Num: 3999, Rn: "MMMCMXCIX"},
+	{Num: 2014, Rn: "MMXIV"},
+	{Num: 1006, Rn: "MVI"},
+	{Num: 798, Rn: "DCCXCVIII"},
+}
 
-	for _, testCase := range testSet {
-		got := ConvertToRoman(testCase.num)
-		want := testCase.rn
+func TestConversionToRoman(t *testing.T) {
+
+	for _, testCase := range cases {
+		got := ConvertToRoman(testCase.Num)
+		want := testCase.Rn
 		if got != want {
 			t.Errorf("got %q, but wanted %q", got, want)
 		}
 	}
 
+}
+
+func TestConversionToArabic(t *testing.T) {
+	for _, testCase := range cases {
+		got := ConvertToArabic(testCase.Rn)
+		want := testCase.Num
+		if got != want {
+			t.Errorf("got %q, but wanted %q", got, want)
+		}
+	}
 }
