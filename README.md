@@ -87,8 +87,14 @@ https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/select
 
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/sync
 
-# Next Step
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/context
+
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/roman-numerals
+
+# Next Step
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/reading-files
 
 # TODO later
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/reflection
+
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/math

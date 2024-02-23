@@ -1,9 +1,12 @@
 package romannumerals
 
-import "testing"
+import (
+	"testing"
+	"testing/quick"
+)
 
 var cases = []struct {
-	Num int
+	Num uint16
 	Rn  string
 }{
 	{Num: 1, Rn: "I"},
@@ -56,5 +59,19 @@ func TestConversionToArabic(t *testing.T) {
 		if got != want {
 			t.Errorf("got %q, but wanted %q", got, want)
 		}
+	}
+}
+
+func TestPropertiesOfConverstion(t *testing.T) {
+	assertion := func(arabic uint16) bool {
+		roman := ConvertToRoman(arabic)
+		fromRoman := ConvertToArabic(roman)
+
+		return fromRoman == arabic
+	}
+
+	err := quick.Check(assertion, nil)
+	if err != nil {
+		t.Error("failed checks", err)
 	}
 }

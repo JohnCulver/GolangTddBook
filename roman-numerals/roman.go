@@ -3,7 +3,7 @@ package romannumerals
 import "strings"
 
 type RomanNumeral struct {
-	Value  int
+	Value  uint16
 	Symbol string
 }
 
@@ -27,7 +27,7 @@ var allRomanNumerals = []RomanNumeral{
 // it is less efficient
 //
 // Deprecated: Use ConvertToRoman
-func ConvertToRomanOld(num int) string {
+func ConvertToRomanOld(num uint16) string {
 
 	var result strings.Builder
 
@@ -44,7 +44,7 @@ func ConvertToRomanOld(num int) string {
 	return result.String()
 }
 
-func ConvertToRoman(num int) string {
+func ConvertToRoman(num uint16) string {
 
 	var result strings.Builder
 
@@ -58,8 +58,12 @@ func ConvertToRoman(num int) string {
 	return result.String()
 }
 
-func ConvertToArabic(symbolInput string) int {
-	var result int
+// This was my first attempt at writing the for loop
+// it is less efficient
+//
+// Deprecated: Use ConvertToArabic
+func ConvertToArabicOld(symbolInput string) uint16 {
+	var result uint16
 	for len(symbolInput) > 0 {
 		for _, rn := range allRomanNumerals {
 			if strings.HasPrefix(symbolInput, rn.Symbol) {
@@ -70,4 +74,17 @@ func ConvertToArabic(symbolInput string) int {
 	}
 
 	return result
+}
+
+func ConvertToArabic(roman string) uint16 {
+	var arabic uint16 = 0
+
+	for _, numeral := range allRomanNumerals {
+		for strings.HasPrefix(roman, numeral.Symbol) {
+			arabic += numeral.Value
+			roman = strings.TrimPrefix(roman, numeral.Symbol)
+		}
+	}
+
+	return arabic
 }
