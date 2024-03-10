@@ -14,6 +14,12 @@ go install golang.org/x/tools/cmd/godoc
 ```sh
 brew install gopls
 ```
+
+**windows**
+```sh
+go install golang.org/x/tools/gopls@latest
+```
+
 Provides IDE features
 
 ## errcheck
@@ -24,6 +30,11 @@ go install github.com/kisielk/errcheck@latest
 ```
 Checks for unchecked errors.
 
+### dlv
+```sh
+go install -v github.com/go-delve/delve/cmd/dlv@latest
+```
+For debugging
 
 ## go vet
 ```sh
@@ -48,7 +59,7 @@ Detects suspscious code and sublte errors
 }
 ```
 
-## VS Code Exstentions
+## VS Code Extentions
 
 ### Go test explorer
     Great for visually running tests
